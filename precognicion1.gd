@@ -1,6 +1,5 @@
 extends Control
 
-
 const CHAR_READ_RATE = 0.05
 
 onready var textbox_container = $CanvasLayer/MarginContainer
@@ -9,6 +8,8 @@ onready var label2 =$CanvasLayer/MarginContainer/Panel/Label2
 onready var label3 =$CanvasLayer/MarginContainer/Panel/Label3
 
 func _ready():
+	MusicaControl.musica_intro_stop()
+	MusicaControl.musica_precognicion()
 	hide_textbox() 
 	add_text("LA ","Precognición", ", también llamada\npresciencia o premonición,                \nEs la capacidad psiquica               \npara  conocer o ver eventos en el Futuro                ")
 	

@@ -54,12 +54,12 @@ func seleccion(enter):
 		#get_tree().change_scene_to(intro)
 		#export (String, FILE,"res://scenes/intro.tscn") var intro
 	#export(String, FILE, "res://scenes/intro.tscn") var level 
-	CambioEscena.cambio_escena("res://scenes/intro.tscn")			
+	CambioEscena.cambio_escena("res://scenes/menuprincipal.tscn")			
 func _process(delta):
 	if $CanvasLayer/continuar.pressed:
 #		get_tree().change_scene_to(intro)
 #	pass
-		CambioEscena.cambio_escena("res://scenes/intro.tscn")			
+		CambioEscena.cambio_escena("res://scenes/menuprincipal.tscn")			
 	#return niveles.get(enter)#	musica_fondo.musica_fondo(musica_fondo)
 #func get_level(p_name):
 	#return intro

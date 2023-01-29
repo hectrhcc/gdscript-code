@@ -22,8 +22,7 @@ func add_text(next_text):
 	$Textbox/Tween.interpolate_property(label,"percent_visible",0.0, 1.0, len(next_text) * CHAR_READ_RATE, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Textbox/Tween.start()
 	
-	
+
 func _on_Timer_timeout():
 	get_tree().change_scene_to(vela2)
-
 export (PackedScene) var vela2

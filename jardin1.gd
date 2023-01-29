@@ -6,6 +6,7 @@ onready var textbox_container = $CanvasLayer/MarginContainer
 onready var label =$CanvasLayer/MarginContainer/Panel/Label
 
 func _ready():
+	MusicaControl.musica_cielo_stop()
 	hide_textbox()
 	add_text("las solitarias ruinas parecen pertenecer a\nun antiguo jardin secreto")
 	

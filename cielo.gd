@@ -6,6 +6,8 @@ onready var textbox_container = $CanvasLayer/MarginContainer
 onready var label =$CanvasLayer/MarginContainer/Panel/Label
 
 func _ready():
+	MusicaControl.musica_precognicion_stop()
+	MusicaControl.musica_cielo()
 	hide_textbox()
 	add_text(" El cielo nocturno te entrega nuevas direcciones\n Has logrado ubicarte gracias a las constelaciones  ")
 	

@@ -15,7 +15,7 @@ func seleccion(enter):
 		#get_tree().change_scene_to(intro)
 		#export (String, FILE,"res://scenes/intro.tscn") var intro
 	#export(String, FILE, "res://scenes/intro.tscn") var level 
-	CambioEscena.cambio_escena("res://scenes/intro.tscn")
+	CambioEscena.cambio_escena("res://scenes/menuprincipal.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,5 +33,5 @@ func _process(delta):
 	#if $guardar.pressed:
 	#	pass
 	if $volver.pressed:
-		CambioEscena.cambio_escena("res://scenes/intro.tscn")	
+		CambioEscena.cambio_escena("res://scenes/menuprincipal.tscn")	
 

@@ -75,6 +75,8 @@ func seleccion(enter):
 	if(opc_act==0):
 		CambioEscena.cambio_escena("res://scenes/cielo3.tscn")
 	if(opc_act==1):
+		MusicaControl.musica_cielo_stop()
 		CambioEscena.cambio_escena("res://scenes/concentracion.tscn")
 	if(opc_act==2):
+		MusicaControl.musica_cielo_stop()
 		CambioEscena.cambio_escena("res://scenes/suelo.tscn")

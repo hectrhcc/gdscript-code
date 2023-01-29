@@ -28,3 +28,15 @@ func _on_Timer_timeout():
 #	get_tree().change_scene_to(cont1)
 	CambioEscena.cambio_escena("res://scenes/cont1.tscn")
 #export (PackedScene) var cont1
+
+var opc_act = 0
+func _physics_process(delta):
+	if(Input.is_action_just_pressed("tecla_ingreso")):
+		#$s.playing = true
+		#yield(get_tree().create_timer(0.3),"timeout") #tiempo pa que alcance el sonido a salir
+		seleccion(true)
+
+func seleccion(ingreso):
+	if(opc_act==0):
+		CambioEscena.cambio_escena("res://scenes/cont1.tscn")
+
