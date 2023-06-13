@@ -31,6 +31,7 @@ func add_text(next_text,a):
 var opc_act = 0
 
 func _physics_process(delta):
+	MiSingleton._salir()
 	if(Input.is_action_just_pressed("tecla_ingreso")):
 		$enter.playing = true
 		yield(get_tree().create_timer(0.3),"timeout") #tiempo pa que alcance el sonido a salir

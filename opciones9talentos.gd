@@ -1,15 +1,48 @@
 extends Control
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var op_act = 0
-# Called when the node enters the scene tree for the first time.
-#func _ready():
-#	pass # Replace with function body.
+var thread
+	
+# The thread will start here.
+func _ready():
+	thread = Thread.new()
+	# Third argument is optional userdata, it can be any variable.
+	thread.start(self, "_thread_function", "Hora espejo")
+	#OS.delay_msec(58000) casi una buena idea
+
+# Run here and exit.
+# The argument is the userdata passed from start().
+# If no argument was passed, this one still needs to
+# be here and it will be null.
+func _thread_function(userdata):	
+	var nombre_escena =get_tree().current_scene.name
+	MiSingleton.escena_guardada= nombre_escena
+	print("nombre de la escena:", MiSingleton.escena_guardada)
+	#para que la hora se actualize tiene que estar dentro de un while porque sino solo va estar seteadoc con la hora de la primera ejecucion
+	print("mi singleton:",MiSingleton.Estado_Hora)
+	while (thread.is_active()): #Input.is_action_just_pressed("ui_cancel")==false
+		var time = Time.get_time_dict_from_system()
+		var hour = time.hour
+		var minutes = time.minute
+		#solo pa revisar que todo estaba bien
+		print("entre al while")
+		print("Estado hora:",MiSingleton.Estado_Hora)
+		print("hora:", hour)
+		print("minutos:", minutes)
+		yield(get_tree().create_timer(5),"timeout")
+		if (hour == minutes and MiSingleton.Estado_Hora == true ):
+			CambioEscena.cambio_escena("res://scenes/hora_espejo.tscn")
+			MiSingleton.Estado_Hora = false
+		if (MiSingleton.Estado_Hora ==false):
+			yield(get_tree().create_timer(3600),"timeout")
+			MiSingleton.Estado_Hora = true
+	
+# Thread must be disposed (or "joined"), for portability.
+func _exit_tree():
+	thread.wait_to_finish()
 
 func _physics_process(delta):
+	MiSingleton._salir()
 	#if(Input.is_action_just_pressed("tecla_select")):
 	#	procesar_opc(true)
 	if(Input.is_action_just_pressed("tecla_arriba")):
@@ -84,21 +117,6 @@ func seleccion(enter):
 	elif(op_act==8):
 		CambioEscena.cambio_escena( "res://scenes/arte.tscn")
 		#get_tree().change_scene_to(arte)
-
-#func _process(delta):
-#	if $canvas/iniciar.pressed:
-#		get_tree().change_scene_to(vela1)
-#	if $canvas/opciones.pressed:
-#		get_tree().change_scene_to(opciones)
-#	if $canvas/salir.pressed:
-#		get_tree().quit()
-			
-#export (PackedScene) var precognicion
-#export (PackedScene) var realidad
-#export (PackedScene) var suenos
-#export (PackedScene) var primercontacto
-#export (PackedScene) var oraculo
-#export (PackedScene) var magia
-#export (PackedScene) var fortuna
-#export (PackedScene) var sabiduria
-#export (PackedScene) var arte
+#Aqui empieza el hilo para que llame a la hora espejo
+# Called when the node enters the scene tree for the first time.
+	

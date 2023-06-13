@@ -30,6 +30,7 @@ func _on_Timer_timeout():
 #export (PackedScene) var cont1
 var opc_act = 0
 func _physics_process(delta):
+	MiSingleton._salir()	
 	if(Input.is_action_just_pressed("tecla_ingreso")):
 		seleccion(true)
 

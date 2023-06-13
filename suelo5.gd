@@ -4,7 +4,8 @@ const CHAR_READ_RATE = 0.05
 
 onready var textbox_container = $CanvasLayer/MarginContainer
 onready var label =$CanvasLayer/MarginContainer/Panel/Label
-
+func _physics_process(delta):
+	MiSingleton._salir()
 func _ready():
 	hide_textbox()
 	add_text("Decides seguir el rastro\nmas adelante encuentras unas huellas\n\n seguir las huellas\n\nperder el rastro")

@@ -5,7 +5,7 @@ extends Control
 # var a = 2
 # var b = "text"
 func _physics_process(delta):
-
+	MiSingleton._salir()
 	if(Input.is_action_just_pressed("tecla_ingreso")):
 		$select.playing = true
 		yield(get_tree().create_timer(0.3),"timeout")

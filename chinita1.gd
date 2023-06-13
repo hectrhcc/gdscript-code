@@ -5,6 +5,7 @@ const CHAR_READ_RATE = 0.05
 onready var textbox_container = $Textbox/textboxcontainer
 onready var label =$Textbox/textboxcontainer/Panel/Label
 
+
 func _ready():
 	hide_textbox()
 	add_text("\"Alegria y Buena Suerte\"")
@@ -30,6 +31,7 @@ func _on_Timer_timeout():
 #export (PackedScene) var cont1
 var opc_act = 0
 func _physics_process(delta):
+	MiSingleton._salir()
 	if(Input.is_action_just_pressed("tecla_ingreso")):
 		seleccion(true)
 func seleccion(ingreso):

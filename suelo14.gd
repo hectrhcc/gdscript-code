@@ -5,7 +5,8 @@ const CHAR_READ_RATE = 0.05
 onready var textbox_container = $CanvasLayer/MarginContainer
 onready var label =$CanvasLayer/MarginContainer/Panel/Label
 onready var label2 =$CanvasLayer/MarginContainer/Panel/Label2
-
+func _physics_process(delta):
+	MiSingleton._salir()
 func _ready():
 	hide_textbox()
 	add_text("Me introduje al bosque mas oscuro\nen busqueda de mi amada SOPHIA\n\nMi enamorada se perdio en el bosque hace unos...\nDias..Semanas.. Meses...\nNo se cuanto Tiempo ha transcurrido\ndesde que comence MI VIAJE DE BUSQUEDA\n\n\"En la oscuridad poco importa\nque todas las respuestas sean absurdas\"","WillYaM Minerva")

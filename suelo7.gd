@@ -4,7 +4,8 @@ const CHAR_READ_RATE = 0.05
 
 onready var textbox_container = $CanvasLayer/MarginContainer
 onready var label =$CanvasLayer/MarginContainer/Panel/Label
-
+func _physics_process(delta):
+	MiSingleton._salir()
 func _ready():
 	hide_textbox()
 	add_text("Al igual que tu\nhace un tiempo atras hubo un viajero\nque se adentro a lo profundo\nde este mismo bosque misterioso")

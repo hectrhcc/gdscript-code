@@ -5,6 +5,7 @@ const CHAR_READ_RATE = 0.05
 onready var textbox_container = $CanvasLayer/MarginContainer
 onready var label =$CanvasLayer/MarginContainer/Panel/Label
 onready var label2 =$CanvasLayer/MarginContainer/Panel/Label2
+
 func _ready():
 	hide_textbox()
 	add_text("sigues avanzando\nlos sonidos del bosque\nreaccionan a tu caminar\n\nte sumerges mas y mas en la oscuridad", "mirar el cielo\n\ncontinuar explorando\n\nusar concentracion")
@@ -29,6 +30,7 @@ func add_text(next_text,c):
 var opc_act = 0
 
 func _physics_process(delta):
+	MiSingleton._salir()
 	if(Input.is_action_just_pressed("tecla_ingreso")):
 		$enter.playing = true
 		yield(get_tree().create_timer(0.3),"timeout") 

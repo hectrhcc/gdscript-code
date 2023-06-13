@@ -11,9 +11,8 @@ onready var textbox_container =$CanvasLayer/MarginContainer
 onready var label =$CanvasLayer/MarginContainer/Panel/Label
 onready var label2 =$CanvasLayer/MarginContainer/Panel/Label2
 onready var label3 =$CanvasLayer/MarginContainer/Panel/Label3
-
-
-func _ready():
+	
+func _ready():	
 	hide_textbox()
 	add_text("Los Nueve Talentos", "                   es un Artefacto Digital de Autoexploración Mágica\nun software interactivo con el cual puedes adentrarte\n en el camino hacia           ","El Misterio")
 	
@@ -44,7 +43,7 @@ func add_text(next_text,next_text2,next_text3 ):
 	
 
 func _physics_process(delta):
-
+	MiSingleton._salir()
 	if(Input.is_action_just_pressed("tecla_ingreso")):
 		$select.playing = true
 		yield(get_tree().create_timer(0.3),"timeout")

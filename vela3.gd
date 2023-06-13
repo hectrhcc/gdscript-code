@@ -6,7 +6,9 @@ onready var textbox_container = $Textbox/textboxcontainer
 onready var label =$Textbox/textboxcontainer/Panel/Label
 onready var label2 =$Textbox/textboxcontainer/Panel/Label/Label2
 onready var label3 =$Textbox/textboxcontainer/Panel/Label/Label3
-
+func _physics_process(delta):
+	MiSingleton._salir()
+	
 func _ready():
 	hide_textbox()
 	add_text("Ninguna Cultura en todo el Mundo puede Negar\nLa Existencia de un                              ", "Misterio "," Mas Grande que Todos Nosotros")

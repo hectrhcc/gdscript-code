@@ -14,6 +14,8 @@ extends Control
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func _physics_process(delta):
+	MiSingleton._salir()
 func _on_Timer_timeout():
 	get_tree().change_scene_to(precognicion1)
 

@@ -5,7 +5,8 @@ var iniciorandom_chinita = random_scene_chinita();
 
 onready var textbox_container =$Textbox/textboxcontainer
 onready var label =$Textbox/textboxcontainer/Panel/Label
-
+func _physics_process(delta):
+	MiSingleton._salir()
 func _ready():
 	hide_textbox()
 	add_text("\"Has Obtenido Una Virtud\"")

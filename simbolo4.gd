@@ -1,6 +1,7 @@
 extends Control
 var iniciorandom_simbolos = random_scene_simbolos();
-	
+func _physics_process(delta):
+	MiSingleton._salir()
 func random_scene_simbolos() -> String:
 	randomize()
 	var scenes_list: Array = [

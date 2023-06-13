@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fuente/VCR_OSD_MONO.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/chinita1.gd" type="Script" id=2]
+[ext_resource path="res://imagenes/chinita0.jpg" type="Texture" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Chinita0" type="Sprite" parent="."]
+position = Vector2( 675, 158 )
+scale = Vector2( 0.213962, 0.24692 )
+texture = ExtResource( 3 )
+
+[node name="Textbox" type="CanvasLayer" parent="."]
+
+[node name="textboxcontainer" type="MarginContainer" parent="Textbox"]
+margin_top = 279.0
+margin_right = 1023.0
+margin_bottom = 446.0
+
+[node name="Panel" type="Panel" parent="Textbox/textboxcontainer"]
+margin_right = 1023.0
+margin_bottom = 167.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Textbox/textboxcontainer/Panel"]
+margin_left = 324.0
+margin_top = 62.0
+margin_right = 1020.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+percent_visible = 0.0
+
+[node name="Tween" type="Tween" parent="Textbox"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

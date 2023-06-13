@@ -7,7 +7,7 @@ onready var label =$CanvasLayer/MarginContainer/Panel/Label
 
 func _ready():
 	hide_textbox()
-	add_text("\" El Cielo Sabe por lo que estas Pasando, ten Fe\"")
+	add_text(" \"El Cielo Sabe por lo que estas Pasando, ten Fe\"")
 	
 func hide_textbox():
 	label.text=""
@@ -30,6 +30,7 @@ func _on_Timer_timeout():
 #export (PackedScene) var cont1
 var opc_act = 0
 func _physics_process(delta):
+	MiSingleton._salir()
 	if(Input.is_action_just_pressed("tecla_ingreso")):
 		seleccion(true)
 

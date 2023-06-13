@@ -4,7 +4,9 @@ const CHAR_READ_RATE = 0.05
 
 onready var textbox_container = $Textbox/textboxcontainer
 onready var label =$Textbox/textboxcontainer/Panel/Label
-
+func _physics_process(delta):
+	MiSingleton._salir()
+	
 func _ready():
 	hide_textbox()
 	add_text("Muchas Gracias por iniciar este viaje")

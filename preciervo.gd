@@ -6,7 +6,8 @@ var iniciorandom_ciervo = random_scene_ciervo();
 
 onready var textbox_container =$CanvasLayer/MarginContainer
 onready var label =$CanvasLayer/MarginContainer/Panel/Label
-
+func _physics_process(delta):
+	MiSingleton._salir()
 func _ready():
 	hide_textbox()
 	add_text("\"Has Obtenido Una Virtud\"")
