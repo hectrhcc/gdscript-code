@@ -4,8 +4,7 @@ const CHAR_READ_RATE = 0.05
 
 onready var textbox_container = $CanvasLayer/MarginContainer
 onready var label =$CanvasLayer/MarginContainer/Panel/Label
-func _physics_process(delta):
-	MiSingleton._salir()
+
 func _ready():
 	hide_textbox()
 	add_text("has logrado percibir una presencia\n\nacercarse al misterio\n\nvolver al bosque")

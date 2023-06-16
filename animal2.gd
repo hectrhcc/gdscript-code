@@ -29,7 +29,6 @@ var mov_horizon = 0
 #	pass # Replace with function body.
 
 func _physics_process(delta):
-	MiSingleton._salir()
 	if(Input.is_action_just_pressed("tecla_select")):
 		$opcion.playing = true
 		procesar_opc(true)

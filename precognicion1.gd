@@ -6,8 +6,7 @@ onready var textbox_container = $CanvasLayer/MarginContainer
 onready var label =$CanvasLayer/MarginContainer/Panel/Label
 onready var label2 =$CanvasLayer/MarginContainer/Panel/Label2
 onready var label3 =$CanvasLayer/MarginContainer/Panel/Label3
-func _physics_process(delta):
-	MiSingleton._salir()
+
 func _ready():
 	MusicaControl.musica_intro_stop()
 	MusicaControl.musica_precognicion()

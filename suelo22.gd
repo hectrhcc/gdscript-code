@@ -28,7 +28,6 @@ func add_text(next_text,c):
 
 var opc_act = 0
 func _physics_process(delta):
-	MiSingleton._salir()
 	if(Input.is_action_just_pressed("tecla_arriba")):
 		$opcion.playing=true
 		procesar_opc(false)

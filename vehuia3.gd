@@ -1,7 +1,5 @@
 extends Control
 
-func _physics_process(delta):
-	MiSingleton._salir()
 	
 func _process(delta):
 	$hora.text = str($MeshInstance2D.b) 

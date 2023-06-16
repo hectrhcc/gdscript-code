@@ -25,7 +25,6 @@ func add_text(next_text):
 var opc_act = 0
 
 func _physics_process(delta):
-	MiSingleton._salir()
 	#if(Input.is_action_just_pressed("tecla_select")):
 	#	procesar_opc(true)
 	if(Input.is_action_just_pressed("tecla_arriba")):

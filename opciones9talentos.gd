@@ -5,6 +5,7 @@ var thread
 	
 # The thread will start here.
 func _ready():
+	$CanvasLayer/precognicion.modulate = Color.red
 	thread = Thread.new()
 	# Third argument is optional userdata, it can be any variable.
 	thread.start(self, "_thread_function", "Hora espejo")
@@ -42,7 +43,6 @@ func _exit_tree():
 	thread.wait_to_finish()
 
 func _physics_process(delta):
-	MiSingleton._salir()
 	#if(Input.is_action_just_pressed("tecla_select")):
 	#	procesar_opc(true)
 	if(Input.is_action_just_pressed("tecla_arriba")):
@@ -55,7 +55,19 @@ func _physics_process(delta):
 		$select.playing = true
 		yield(get_tree().create_timer(0.3),"timeout")
 		seleccion(true)
-		
+
+func cambiar_color_botones(boton):
+	$CanvasLayer/precognicion.modulate = Color.white
+	$CanvasLayer/realidad.modulate = Color.white
+	$CanvasLayer/suenos.modulate = Color.white
+	$CanvasLayer/primercontacto.modulate = Color.white
+	$CanvasLayer/oraculo.modulate = Color.white
+	$CanvasLayer/magia.modulate = Color.white
+	$CanvasLayer/fortuna.modulate = Color.white
+	$CanvasLayer/sabiduria.modulate = Color.white
+	$CanvasLayer/arte.modulate = Color.white
+	boton.modulate = Color.red
+
 func procesar_opc(aumenta): 
 	if(aumenta):
 		op_act += 1
@@ -69,22 +81,31 @@ func procesar_opc(aumenta):
 		
 	if(op_act == 0):
 		$CanvasLayer/cursor.rect_position = $CanvasLayer/pos1.position
+		cambiar_color_botones($CanvasLayer/precognicion)
 	elif(op_act ==1):
 		$CanvasLayer/cursor.rect_position = $CanvasLayer/pos2.position
+		cambiar_color_botones($CanvasLayer/realidad)
 	elif(op_act ==2):
 		$CanvasLayer/cursor.rect_position = $CanvasLayer/pos3.position
+		cambiar_color_botones($CanvasLayer/suenos)
 	elif(op_act ==3):
 		$CanvasLayer/cursor.rect_position = $CanvasLayer/pos4.position
+		cambiar_color_botones($CanvasLayer/primercontacto)
 	elif(op_act ==4):
 		$CanvasLayer/cursor.rect_position = $CanvasLayer/pos5.position
+		cambiar_color_botones($CanvasLayer/oraculo)
 	elif(op_act ==5):
 		$CanvasLayer/cursor.rect_position = $CanvasLayer/pos6.position
+		cambiar_color_botones($CanvasLayer/magia)
 	elif(op_act ==6):
 		$CanvasLayer/cursor.rect_position = $CanvasLayer/pos7.position
+		cambiar_color_botones($CanvasLayer/fortuna)
 	elif(op_act ==7):
 		$CanvasLayer/cursor.rect_position = $CanvasLayer/pos8.position
+		cambiar_color_botones($CanvasLayer/sabiduria)
 	elif(op_act ==8):
 		$CanvasLayer/cursor.rect_position = $CanvasLayer/pos9.position
+		cambiar_color_botones($CanvasLayer/arte)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -17,8 +17,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _physics_process(delta):
-	MiSingleton._salir()
+
 func _on_Timer_timeout():
 	get_tree().change_scene_to(menuprincipal)
 

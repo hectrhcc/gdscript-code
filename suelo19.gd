@@ -5,8 +5,6 @@ const CHAR_READ_RATE = 0.05
 onready var textbox_container = $CanvasLayer/MarginContainer
 onready var label =$CanvasLayer/MarginContainer/Panel/Label
 onready var label2 =$CanvasLayer/MarginContainer/Panel/Label2
-func _physics_process(delta):
-	MiSingleton._salir()
 func _ready():
 	hide_textbox()
 	add_text("sigues avanzando\nlos sonidos del bosque\nreaccionan a tu caminar\n\nte sumerges mas y mas en la oscuridad","mirar el cielo\n\ncontinuar explorando\n\nusar concentracion")

@@ -10,7 +10,6 @@ var opc_act = 0
 #	pass # Replace with function body.
 
 func _physics_process(delta):
-	MiSingleton._salir()
 	#if(Input.is_action_just_pressed("tecla_select")):
 	#	procesar_opc(true)
 	if(Input.is_action_just_pressed("tecla_arriba")):

@@ -7,8 +7,7 @@ onready var textbox_container = $Textbox/textboxcontainer
 onready var label =$Textbox/textboxcontainer/Panel/label
 onready var label2 =$Textbox/textboxcontainer/Panel/label/label2
 # que no pase el contorno el texto
-func _physics_process(delta):
-	MiSingleton._salir()
+
 func _ready():
 	hide_textbox()
 	add_text("Puedes Creer que existen o puedes creer que no existan\nPero lo que nadie puede Negar es la existencia del         ","Misterio")
