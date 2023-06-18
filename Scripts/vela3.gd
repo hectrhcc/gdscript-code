@@ -10,7 +10,7 @@ onready var label3 =$Textbox/textboxcontainer/Panel/Label/Label3
 	
 func _ready():
 	hide_textbox()
-	add_text("Ninguna Cultura en todo el Mundo puede Negar\nLa Existencia de un                              ", "Misterio "," Mas Grande que Todos Nosotros")
+	add_text("Ninguna Cultura en todo el Mundo puede Negar\nLa Existencia de un                              ", "Misterio ","  Mas Grande que Todos Nosotros")
 func hide_textbox():
 	label.text=""
 	label2.text=""
