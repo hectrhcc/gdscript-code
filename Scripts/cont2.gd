@@ -33,4 +33,4 @@ func add_text(next_text,next_text2 ):
 	
 func _on_Timer_timeout():
 	#get_tree().change_scene_to(chinita1)
-	CambioEscena.cambio_escena("res://scenes/bosque.tscn")
+	CambioEscena.cambio_escena("res://scenes/investigarbosque1.tscn")

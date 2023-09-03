@@ -7,7 +7,7 @@ onready var label =$CanvasLayer/MarginContainer/Panel/Label
 
 func _ready():
 	hide_textbox()
-	add_text("explorar las ruinas\n\nalejarse y explorar el bosque")
+	add_text("EXPLORAR EL JARDIN\n\nVOLVER AL BOSQUE")
 	
 func hide_textbox():
 	label.text=""

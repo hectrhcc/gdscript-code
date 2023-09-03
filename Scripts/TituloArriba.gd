@@ -13,6 +13,6 @@ func _process(delta):
 		timer = 0.5               
 	   
 	if faded:               
-		modulate = Color(1,1,1,0.5)      
+		modulate = Color(1,1,1,0)      
 	else:
 		modulate = Color(1,1,1,1)

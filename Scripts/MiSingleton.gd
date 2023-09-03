@@ -1,20 +1,16 @@
 extends Node
 
-var escena_guardada
-var contador =0
-var Estado_Hora = true
 
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	# Ocultar el cursor del sistema operativo
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	pass # Replace with function body.
 
-#func _salir():
-#	if(Input.is_action_just_pressed('tecla_escape')):
-#		get_tree().quit()
 
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		get_tree().quit()
-
-#   if event.is_action_pressed("ui_select"):
-#		CambioEscena.cambio_escena("res://scenes/inventario.tscn")	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass

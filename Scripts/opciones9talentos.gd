@@ -115,29 +115,36 @@ func seleccion(enter):
 	if(op_act==0):
 		CambioEscena.cambio_escena( "res://scenes/calavera.tscn")
 	elif(op_act==1):
-		CambioEscena.cambio_escena( "res://scenes/realidad.tscn")
+		#CambioEscena.cambio_escena( "res://scenes/realidad.tscn")
+		pass
 		#get_tree().change_scene_to(realidad)
 	elif(op_act==2):
-		CambioEscena.cambio_escena( "res://scenes/suenos.tscn")
+		#CambioEscena.cambio_escena( "res://scenes/suenos.tscn")
+		pass
 		#get_tree().change_scene_to(suenos)
 	elif(op_act==3):
 		CambioEscena.cambio_escena( "res://scenes/primercontacto.tscn")
 		#get_tree().change_scene_to(primercontacto)
 	elif(op_act==4):
-		CambioEscena.cambio_escena( "res://scenes/oraculo.tscn")
+		#CambioEscena.cambio_escena( "res://scenes/oraculo.tscn")
+		pass
 		#get_tree().change_scene_to(oraculo)
 	elif(op_act==5):
 		CambioEscena.cambio_escena( "res://scenes/magia.tscn")
 		#get_tree().change_scene_to(magia)
 	elif(op_act==6):
-		CambioEscena.cambio_escena( "res://scenes/fortuna.tscn")
+		#CambioEscena.cambio_escena( "res://scenes/fortuna.tscn")
+		pass
 		#get_tree().change_scene_to(fortuna)
 	elif(op_act==7):
-		CambioEscena.cambio_escena( "res://scenes/sabiduria.tscn")
+		#CambioEscena.cambio_escena( "res://scenes/sabiduria.tscn")
+		pass
 		#get_tree().change_scene_to(sabiduria)
 	elif(op_act==8):
-		CambioEscena.cambio_escena( "res://scenes/arte.tscn")
+		#CambioEscena.cambio_escena( "res://scenes/arte.tscn")
+		pass
 		#get_tree().change_scene_to(arte)
 #Aqui empieza el hilo para que llame a la hora espejo
 # Called when the node enters the scene tree for the first time.
 	
+
