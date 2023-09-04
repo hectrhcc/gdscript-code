@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://shaders/pixelar.shader" type="Shader" id=1]
+[ext_resource path="res://imagenes/INTRO ARAKI1.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/araki.gd" type="Script" id=3]
+[ext_resource path="res://Musica/Intro/title intro tone 8bit.wav" type="AudioStream" id=5]
+
+[sub_resource type="ShaderMaterial" id=4]
+render_priority = 1
+shader = ExtResource( 1 )
+shader_param/pixelFactor = 100.0
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("IntroAraki1:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("IntroAraki1:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("IntroAraki1:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="IntroAraki1" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 4 )
+position = Vector2( 670, 298 )
+scale = Vector2( 0.194242, 0.210588 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+"anims/fade in" = SubResource( 2 )
+"anims/fade out" = SubResource( 3 )
+
+[node name="ini" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 2.364
+pitch_scale = 0.98

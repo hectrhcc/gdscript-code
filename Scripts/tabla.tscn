@@ -1,0 +1,116 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Fuente/VCR_OSD_MONO.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://imagenes/TABLA SOPHIA.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/tabla.gd" type="Script" id=3]
+[ext_resource path="res://Musica/select.wav" type="AudioStream" id=4]
+[ext_resource path="res://Musica/options.wav" type="AudioStream" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 57
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 57
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 62
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 22
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="TablaSophia" type="Sprite" parent="."]
+position = Vector2( 700, 304 )
+scale = Vector2( 0.307879, 0.232157 )
+texture = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -232.0
+margin_bottom = 242.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 474.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="opciones" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="\?\?\?" type="Label" parent="."]
+margin_left = 656.0
+margin_top = 202.0
+margin_right = 725.0
+margin_bottom = 238.0
+custom_fonts/font = SubResource( 6 )
+text = "???"
+
+[node name="no" type="Label" parent="."]
+margin_left = 770.0
+margin_top = 285.0
+margin_right = 838.0
+margin_bottom = 390.0
+custom_fonts/font = SubResource( 2 )
+text = "NO
+"
+
+[node name="si" type="Label" parent="."]
+margin_left = 542.0
+margin_top = 285.0
+margin_right = 694.0
+margin_bottom = 390.0
+custom_fonts/font = SubResource( 3 )
+text = "SI
+"
+
+[node name="salir" type="Label" parent="."]
+margin_left = 599.0
+margin_top = 448.0
+margin_right = 799.0
+margin_bottom = 561.0
+custom_fonts/font = SubResource( 4 )
+text = "SALIR
+"
+
+[node name="agradecer" type="Label" parent="."]
+margin_left = 632.0
+margin_top = 264.0
+margin_right = 882.0
+margin_bottom = 341.0
+custom_fonts/font = SubResource( 5 )
+text = "AGRADECER
+"
+
+[node name="info" type="Label" parent="."]
+margin_left = 664.0
+margin_top = 310.0
+margin_right = 914.0
+margin_bottom = 347.0
+custom_fonts/font = SubResource( 5 )
+text = "INFO"

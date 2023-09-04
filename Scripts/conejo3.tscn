@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/conejo3.gd" type="Script" id=1]
+[ext_resource path="res://imagenes/CONEJO0.jpg" type="Texture" id=2]
+[ext_resource path="res://Fuente/VCR_OSD_MONO.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 23
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Conejo0" type="Sprite" parent="."]
+position = Vector2( 514, 152 )
+scale = Vector2( 0.227871, 0.181175 )
+texture = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -67.0
+margin_bottom = 97.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 164.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/Panel"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 105.0
+margin_top = -42.0
+margin_right = -100.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+percent_visible = 0.0
+
+[node name="Tween" type="Tween" parent="CanvasLayer"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
